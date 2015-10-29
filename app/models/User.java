@@ -1,10 +1,11 @@
 package models;
 
+import com.avaje.ebean.annotation.CreatedTimestamp;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import play.data.validation.Constraints;
 import play.db.ebean.Model;
 import javax.persistence.*;
-import java.util.ArrayList;
+import java.util.*;
 
 /**
  * Created by owner on 28/10/15.
@@ -27,6 +28,9 @@ public class User extends Model{
 
     @Constraints.Required
     private String email;
+
+    @CreatedTimestamp
+    private Date date_added;
 
     @OneToMany(fetch = FetchType.LAZY)
     @JsonBackReference
@@ -77,6 +81,14 @@ public class User extends Model{
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Date getDate_added() {
+        return date_added;
+    }
+
+    public void setDate_added(Date date_added) {
+        this.date_added = date_added;
     }
 
     public ArrayList<Article> getArticles() {

@@ -61,13 +61,13 @@ public class Database {
     }
 
     @Transactional
-    public ArrayList<User> getUsers(){
+    public ArrayList<User> gettUsers(){
         return new ArrayList<User>(server.find(User.class)
                 .findList());
     }
 
     @Transactional
-    public Article findArticleById(Long id){
+    public Article getArticleById(Long id){
         return server.find(Article.class)
                 .where()
                 .eq("id", id)
@@ -75,7 +75,7 @@ public class Database {
     }
 
     @Transactional
-    public Article findArticleByTitle(String title){
+    public Article getArticleByTitle(String title){
         return server.find(Article.class)
                 .where()
                 .eq("title", title)
@@ -83,10 +83,18 @@ public class Database {
     }
 
     @Transactional
-    public User findUserById(Long id){
+    public User getUserById(Long id){
         return server.find(User.class)
                 .where()
                 .eq("id", id)
+                .findUnique();
+    }
+
+    @Transactional
+    public User getUser(String name){
+        return server.find(User.class)
+                .where()
+                .eq("name", name)
                 .findUnique();
     }
 

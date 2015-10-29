@@ -11,6 +11,7 @@ import java.util.Date;
 /**
  * Created by owner on 28/10/15.
  */
+@Entity
 public class Article extends Model{
 
     @Id
@@ -89,6 +90,22 @@ public class Article extends Model{
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    public Date getDate_created() {
+        return date_created;
+    }
+
+    public void setDate_created(Date date_created) {
+        this.date_created = date_created;
+    }
+
+    public Date getDate_modified() {
+        return date_modified;
+    }
+
+    public void setDate_modified(Date date_modified) {
+        this.date_modified = date_modified;
     }
 
     public boolean isEnabled() {
