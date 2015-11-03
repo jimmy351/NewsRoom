@@ -1,0 +1,26 @@
+#main_content {
+    margin-top: 5%;
+    margin-left: 150px;
+    margin-right: 5vw;
+}
+
+.about-uts-logo {
+    width: 225px;
+    margin: 0 auto;
+    height: auto;
+}
+
+.colour-div {
+    border-radius: 10px;
+    width: 100px;
+    height: 100%;
+    padding: 10px 0;
+}
+
+.floated.image {
+    height: 45px;
+}
+
+#resp_area {
+    display: none;
+}
